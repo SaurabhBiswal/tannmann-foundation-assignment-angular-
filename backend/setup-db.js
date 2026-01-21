@@ -6,9 +6,14 @@ async function setupDatabase() {
         host: process.env.DB_HOST || 'localhost',
         user: process.env.DB_USER || 'root',
         password: process.env.DB_PASSWORD || 'password',
+        port: process.env.DB_PORT || 3306,
+        ssl: {
+            minVersion: 'TLSv1.2',
+            rejectUnauthorized: true
+        }
     };
 
-    console.log(`Connecting to MySQL at ${dbConfig.host} as ${dbConfig.user}...`);
+    console.log(`Connecting to MySQL at ${dbConfig.host}:${dbConfig.port} as ${dbConfig.user}...`);
 
     let connection;
     try {

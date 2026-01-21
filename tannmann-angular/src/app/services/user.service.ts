@@ -7,9 +7,9 @@ import { User, ApiResponse } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:5000/api/users';
+  private apiUrl = 'https://tannmann-foundation-assignment-angular.onrender.com/api/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Get all users
   getUsers(): Observable<ApiResponse> {
@@ -21,12 +21,12 @@ export class UserService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    
+
     return this.http.post<ApiResponse>(this.apiUrl, user, { headers });
   }
 
   // Health check
   healthCheck(): Observable<any> {
-    return this.http.get('http://localhost:5000/api/health');
+    return this.http.get('https://tannmann-foundation-assignment-angular.onrender.com/api/health');
   }
 }
