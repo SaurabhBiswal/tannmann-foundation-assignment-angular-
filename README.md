@@ -1,17 +1,14 @@
-# 🌅 Tann Mann Foundation - Volunteer Registration System
+#  Tann Mann Foundation - Volunteer Registration System
 
 A full-stack web application built with **Angular** (frontend), **Node.js/Express** (backend), and **TiDB Cloud** (MySQL database) for volunteer registration and management.
 
-## 🚀 Live Demo
+##  Live Demo
 
 - **Frontend (Vercel):** [https://tannmannfoundationassignmentangular.vercel.app/](https://tannmannfoundationassignmentangular.vercel.app/)
 - **Backend (Render):** [https://tannmann-foundation-assignment-angular.onrender.com](https://tannmann-foundation-assignment-angular.onrender.com)
 
-## 📸 Screenshots
 
-![Working Application](https://via.placeholder.com/800x400?text=Add+Your+Screenshot+Here)
-
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - **Framework:** Angular 21.1.0
@@ -32,7 +29,7 @@ A full-stack web application built with **Angular** (frontend), **Node.js/Expres
 - **Backend:** Render
 - **Database:** TiDB Cloud (AWS Singapore)
 
-## ✨ Features
+##  Features
 
 ✅ User registration with real-time form validation  
 ✅ Auto-refresh user list every 60 seconds  
@@ -43,7 +40,7 @@ A full-stack web application built with **Angular** (frontend), **Node.js/Expres
 ✅ CORS-enabled for cross-origin requests  
 ✅ Error handling with user-friendly messages  
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 angular-form-app/
@@ -73,7 +70,7 @@ angular-form-app/
 
    ```
 
-## 📡 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint       | Description              |
 |--------|----------------|--------------------------|
@@ -81,26 +78,10 @@ angular-form-app/
 | GET    | `/api/users`   | Get all registered users |
 | POST   | `/api/users`   | Register a new user      |
 
-### Example Request (POST)
-```json
-{
-  "name": "John Doe",
-  "phone": "9876543210",
-  "email": "john@example.com"
-}
-```
-
-### Example Response
-```json
-{
-  "success": true,
-  "message": "User registered successfully",
-  "id": 1
-}
-```
 
 
-## 🔐 Environment Variables
+
+##  Environment Variables
 
 ### Backend (.env)
 ```env
@@ -115,7 +96,7 @@ DB_NAME=tannmann_foundation
 ### Frontend
 No environment variables needed (API URL is hardcoded in `user.service.ts`)
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### CORS Errors
 - Ensure backend CORS is configured to allow `*` or specific frontend domain
@@ -134,7 +115,7 @@ No environment variables needed (API URL is hardcoded in `user.service.ts`)
 - Run `node setup-db.js` to create tables
 - Verify database name matches `.env`
 
-## 📝 Assignment Completion Checklist
+## Assignment Completion Checklist
 
 - ✅ Angular Frontend with Reactive Forms
 - ✅ Node.js/Express Backend API
@@ -144,13 +125,13 @@ No environment variables needed (API URL is hardcoded in `user.service.ts`)
 - ✅ GitHub Repository with clean code
 - ✅ README with setup instructions
 
-## 👨‍💻 Developer
+##  Developer
 
 **Saurabh Biswal**
 - GitHub: [@SaurabhBiswal](https://github.com/SaurabhBiswal)
 - Project: Tann Mann Foundation Assignment
 
-## 📜 License
+##  License
 
 This project was created as part of a coding assignment for Tann Mann Foundation.
 
