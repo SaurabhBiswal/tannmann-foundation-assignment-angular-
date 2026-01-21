@@ -1,0 +1,67 @@
+<div class="form-container">
+  <h2>Register User</h2>
+  
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+    
+    <div class="form-group">
+      <label for="name">Full Name *</label>
+      <input 
+        type="text" 
+        id="name" 
+        formControlName="name"
+        placeholder="Enter your full name"
+        [class.error]="formControls['name'].invalid && formControls['name'].touched"
+      >
+      <div class="error-message" *ngIf="formControls['name'].invalid && formControls['name'].touched">
+        <span *ngIf="formControls['name'].errors?.['required']">Name is required</span>
+        <span *ngIf="formControls['name'].errors?.['minlength']">Minimum 3 characters required</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input 
+        type="tel" 
+        id="phone" 
+        formControlName="phone"
+        placeholder="10-digit number (9876543210)"
+        [class.error]="formControls['phone'].invalid && formControls['phone'].touched"
+      >
+      <div class="error-message" *ngIf="formControls['phone'].invalid && formControls['phone'].touched">
+        <span *ngIf="formControls['phone'].errors?.['required']">Phone number is required</span>
+        <span *ngIf="formControls['phone'].errors?.['pattern']">10-digit number required</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input 
+        type="email" 
+        id="email" 
+        formControlName="email"
+        placeholder="you@example.com"
+        [class.error]="formControls['email'].invalid && formControls['email'].touched"
+      >
+      <div class="error-message" *ngIf="formControls['email'].invalid && formControls['email'].touched">
+        <span *ngIf="formControls['email'].errors?.['required']">Email is required</span>
+        <span *ngIf="formControls['email'].errors?.['email']">Valid email required</span>
+      </div>
+    </div>
+
+    <!-- Message Display -->
+    <div *ngIf="message" class="message" [class.success]="messageType === 'success'" [class.error]="messageType === 'error'">
+      {{ message }}
+    </div>
+
+    <!-- Submit Button -->
+    <button 
+      type="submit" 
+      class="submit-btn"
+      [disabled]="userForm.invalid || isLoading"
+    >
+      <span *ngIf="!isLoading">Register Now</span>
+      <span *ngIf="isLoading">Registering...</span>
+    </button>
+
+  </form>
+</div>

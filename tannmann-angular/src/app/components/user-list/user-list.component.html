@@ -1,0 +1,42 @@
+<div class="users-container">
+  <h2>Registered Users ({{ users.length }})</h2>
+  
+  <div *ngIf="isLoading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading users...</p>
+  </div>
+
+  <div *ngIf="error && !isLoading" class="error-message">
+    {{ error }}
+    <button (click)="loadUsers()" class="retry-btn">Retry</button>
+  </div>
+
+  <div *ngIf="!isLoading && !error">
+    <div *ngIf="users.length === 0" class="empty-state">
+      <p>No users registered yet. Be the first!</p>
+    </div>
+
+    <div *ngIf="users.length > 0" class="users-table-container">
+      <table class="users-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Registered On</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ formatDate(user.created_at) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

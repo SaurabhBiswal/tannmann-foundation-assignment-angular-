@@ -1,0 +1,25 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>🌅 Good Morning!</h1>
+    <p class="subtitle">Welcome to Tann Mann Foundation - Volunteer Registration</p>
+  </header>
+
+  <main class="main-content">
+    <div class="content-wrapper">
+      <!-- Registration Form -->
+      <div class="left-section">
+        <app-user-form (userAdded)="onUserAdded()"></app-user-form>
+      </div>
+
+      <!-- Users List -->
+      <div class="right-section">
+        <app-user-list></app-user-list>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Tann Mann Foundation &copy; {{ currentYear }} | Empowering communities through service</p>
+    <p class="footer-note">Volunteer Registration System - Built with Angular</p>
+  </footer>
+</div>
