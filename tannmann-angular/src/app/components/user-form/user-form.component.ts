@@ -65,7 +65,6 @@ export class UserFormComponent {
     this.message = text;
     this.messageType = type;
 
-    // Auto hide message after 5 seconds
     setTimeout(() => {
       this.message = '';
     }, 5000);

@@ -13,19 +13,16 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Add logging middleware
 app.use((req, res, next) => {
     console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
     next();
 });
 app.use(bodyParser.json());
 
-// Root endpoint
 app.get('/', (req, res) => {
     res.send('Good Morning! Backend is running.');
 });
 
-// Submit Form Data (Create User)
 app.post('/api/users', async (req, res) => {
     const { name, phone, email } = req.body;
 
@@ -45,7 +42,6 @@ app.post('/api/users', async (req, res) => {
     }
 });
 
-// Get all users
 app.get('/api/users', async (req, res) => {
     try {
         const [rows] = await db.execute('SELECT * FROM users ORDER BY created_at DESC');

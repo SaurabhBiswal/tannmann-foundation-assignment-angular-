@@ -1,7 +1,6 @@
 const mysql = require('mysql2');
 require('dotenv').config();
 
-// Conditional SSL: only for TiDB Cloud (not localhost)
 const isCloud = process.env.DB_HOST && process.env.DB_HOST !== 'localhost';
 
 const pool = mysql.createPool({

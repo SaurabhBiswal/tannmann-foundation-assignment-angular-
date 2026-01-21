@@ -48,12 +48,10 @@
       </div>
     </div>
 
-    <!-- Message Display -->
     <div *ngIf="message" class="message" [class.success]="messageType === 'success'" [class.error]="messageType === 'error'">
       {{ message }}
     </div>
 
-    <!-- Submit Button -->
     <button 
       type="submit" 
       class="submit-btn"

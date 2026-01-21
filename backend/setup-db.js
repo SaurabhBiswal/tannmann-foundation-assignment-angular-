@@ -21,16 +21,13 @@ async function setupDatabase() {
 
         console.log('Connected.');
 
-        // Create Database
         const dbName = process.env.DB_NAME || 'tannmann_db';
         console.log(`Creating database '${dbName}' if not exists...`);
         await connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
         console.log('Database created/verified.');
 
-        // Switch to database
         await connection.changeUser({ database: dbName });
 
-        // Create Table
         console.log('Creating users table...');
         const createTableQuery = `
       CREATE TABLE IF NOT EXISTS users (

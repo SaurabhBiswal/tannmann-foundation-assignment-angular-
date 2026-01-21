@@ -70,78 +70,7 @@ angular-form-app/
 └── README.md
 ```
 
-## 🏃 Local Setup
 
-### Prerequisites
-- Node.js (v18+ recommended)
-- npm or yarn
-- TiDB Cloud account (or local MySQL)
-
-### 1. Clone Repository
-```bash
-git clone https://github.com/SaurabhBiswal/tannmann-foundation-assignment-angular-.git
-cd angular-form-app
-```
-
-### 2. Backend Setup
-```bash
-cd backend
-npm install
-
-# Create .env file
-echo "PORT=5000
-DB_HOST=your-tidb-host
-DB_PORT=4000
-DB_USER=your-db-user
-DB_PASSWORD=your-db-password
-DB_NAME=tannmann_foundation" > .env
-
-# Setup database tables
-node setup-db.js
-
-# Start backend server
-npm start
-```
-
-Backend will run on `http://localhost:5000`
-
-### 3. Frontend Setup
-```bash
-cd tannmann-angular
-npm install
-
-# For local development, update user.service.ts:
-# private apiUrl = 'http://localhost:5000/api/users';
-
-# Start Angular dev server
-ng serve
-# or
-npm start
-```
-
-Frontend will run on `http://localhost:4200`
-
-## 🗄️ Database Setup (TiDB Cloud)
-
-1. **Create TiDB Cluster**
-   - Go to [TiDB Cloud](https://tidbcloud.com/)
-   - Create a free Developer Tier cluster
-   - Select AWS Singapore region
-
-2. **Configure Network Access**
-   - Go to **Security > IP Access List**
-   - Add `0.0.0.0/0` (Allow Access from Anywhere)
-   - *For production, whitelist specific IPs*
-
-3. **Get Connection Details**
-   - Click **Connect** button
-   - Copy Host, Port, User, Password, Database name
-   - Update `backend/.env` with these credentials
-
-4. **Initialize Database**
-   ```bash
-   cd backend
-   node setup-db.js
    ```
 
 ## 📡 API Endpoints
@@ -170,44 +99,6 @@ Frontend will run on `http://localhost:4200`
 }
 ```
 
-## 🌐 Deployment
-
-### Deploy Backend to Render
-
-1. Create new **Web Service** on [Render](https://render.com)
-2. Connect GitHub repository
-3. Configure:
-   - **Root Directory:** `backend`
-   - **Build Command:** `npm install`
-   - **Start Command:** `node server.js`
-4. Add Environment Variables:
-   - `DB_HOST`
-   - `DB_PORT`
-   - `DB_USER`
-   - `DB_PASSWORD`
-   - `DB_NAME`
-5. Deploy!
-
-### Deploy Frontend to Vercel
-
-1. Install Vercel CLI:
-   ```bash
-   npm i -g vercel
-   ```
-
-2. Deploy:
-   ```bash
-   cd tannmann-angular
-   vercel --prod
-   ```
-
-3. Configure:
-   - **Project Name:** `tannmann-foundation-assignment-angular`
-   - **Root Directory:** `tannmann-angular`
-   - **Build Command:** `ng build`
-   - **Output Directory:** `dist/tannmann-angular/browser`
-
-4. Vercel automatically uses `vercel.json` for SPA routing
 
 ## 🔐 Environment Variables
 
@@ -265,4 +156,4 @@ This project was created as part of a coding assignment for Tann Mann Foundation
 
 ---
 
-**Made with ❤️ using Angular & Node.js**
+**Made with ❤️ BY SAURABH BISWAL using Angular & Node.js**

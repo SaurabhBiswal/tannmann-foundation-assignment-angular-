@@ -16,7 +16,6 @@ html, body {
   height: 100%;
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -36,7 +35,6 @@ html, body {
   background: #5a6fd8;
 }
 
-/* Utility Classes */
 .text-center {
   text-align: center;
 }

@@ -14,7 +14,6 @@ export class AppComponent {
   currentYear = new Date().getFullYear();
 
   onUserAdded(): void {
-    // This will be called when a new user is added
     console.log('New user added - list should refresh');
   }
 }
