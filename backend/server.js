@@ -31,6 +31,32 @@ app.post('/api/users', async (req, res) => {
     }
 
     try {
+        // Check if phone number already exists
+        const [existingPhone] = await db.execute(
+            'SELECT id FROM users WHERE phone = ?',
+            [phone]
+        );
+
+        if (existingPhone.length > 0) {
+            return res.status(400).json({
+                success: false,
+                message: 'Mobile number already in use'
+            });
+        }
+
+        // Check if email already exists
+        const [existingEmail] = await db.execute(
+            'SELECT id FROM users WHERE email = ?',
+            [email]
+        );
+
+        if (existingEmail.length > 0) {
+            return res.status(400).json({
+                success: false,
+                message: 'Email already in use'
+            });
+        }
+
         const [result] = await db.execute(
             'INSERT INTO users (name, phone, email) VALUES (?, ?, ?)',
             [name, phone, email]
